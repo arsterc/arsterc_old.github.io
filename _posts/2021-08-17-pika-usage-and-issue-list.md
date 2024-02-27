@@ -258,7 +258,6 @@ db0 Sets_keys=0, expires=0, invalid_keys=0
 ```
  
 压测期间, 整个 pika 实例的内存及 qps 情况, 整体上比较稳定, 内存使用的变化幅度也不大:
-![pika_set_bench](/images/articles/202108/pika_set_bench.png)
  
 ## 更多参考
 

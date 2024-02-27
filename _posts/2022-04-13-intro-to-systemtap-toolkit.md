@@ -5,7 +5,7 @@ categories: [system, trace]
 tags: [systemtap trace]
 ---
 
-在文章[Linux 系统动态追踪技术介绍](/introduction_to_linux_dynamic_tracing/)中, 我们提到了 `systemtap` 相关的技术. [systemtap](https://sourceware.org/systemtap/) 在 Linux 系统排错方面一直占据着很重要的角色, 其提供了很成熟的调试符号及复杂的探针处理程序, 可以在系统调用, 用户空间及内核空间几个方面实现细粒度的跟踪分析, 更详细的介绍可以参考 [dynamic-tracing](https://openresty.org/posts/dynamic-tracing/). `systemtap-toolkit` 工具集则是在此基础上，搜集并整理的一些常用的分析工具, 方便对 `Linux` 系统中一些疑难问题的跟踪处理. 下面的工具列表部分来源于网络, 进行了简单修改以支持 `staprun` 方式运行时可以指定额外的参数. 具体见参考部分.
+在文章 introduction_to_linux_dynamic_tracing 中, 我们提到了 `systemtap` 相关的技术. [systemtap](https://sourceware.org/systemtap/) 在 Linux 系统排错方面一直占据着很重要的角色, 其提供了很成熟的调试符号及复杂的探针处理程序, 可以在系统调用, 用户空间及内核空间几个方面实现细粒度的跟踪分析, 更详细的介绍可以参考 [dynamic-tracing](https://openresty.org/posts/dynamic-tracing/). `systemtap-toolkit` 工具集则是在此基础上，搜集并整理的一些常用的分析工具, 方便对 `Linux` 系统中一些疑难问题的跟踪处理. 下面的工具列表部分来源于网络, 进行了简单修改以支持 `staprun` 方式运行时可以指定额外的参数. 具体见参考部分.
 
 
 ## 工具列表
