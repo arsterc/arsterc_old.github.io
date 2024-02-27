@@ -5,7 +5,7 @@ categories:[system]
 tags: [haproxy]
 ---
 
-早期文章[在云中使用 proxy protocol]({{ site.baseurl }}/use-proxy-protocol-in-cloud) 中, 我们介绍了 haproxy 在云环境中的一些使用案例, 同时也包括一些 `proxy protocol` 使用, acl 规则限制等注意事项. 本文则主要介绍使用 haproxy 时常见的一些问题, 后期碰到的问题也会在本文中持续更新. 
+早期文章[在云中使用 proxy protocol](/use-proxy-protocol-in-cloud) 中, 我们介绍了 haproxy 在云环境中的一些使用案例, 同时也包括一些 `proxy protocol` 使用, acl 规则限制等注意事项. 本文则主要介绍使用 haproxy 时常见的一些问题, 后期碰到的问题也会在本文中持续更新. 
 
 ## 问题列表
 

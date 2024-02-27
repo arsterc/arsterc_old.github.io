@@ -5,7 +5,7 @@ tags: [dns]
 comments: true
 ---
 
-在文章[Linux 系统如何处理名称解析]({{ site.baseurl }}/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90/)中, 提到了 Linux 系统处理域名解析的流程. 实际上出于性能相关的原因, 不同编程语言或框架对 DNS 的解析可能做了不同程度的封装. 典型的, 比如 [JDK](https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html) 在没有开启安全管理(默认)的情况下, 会对 DNS 的解析条目缓存 30 秒. 又比如 [libevent](https://github.com/libevent/libevent) 提供了阻塞和非阻塞两种处理 DNS 请求的方式, 自由度更高.
+在文章[Linux 系统如何处理名称解析](/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90/)中, 提到了 Linux 系统处理域名解析的流程. 实际上出于性能相关的原因, 不同编程语言或框架对 DNS 的解析可能做了不同程度的封装. 典型的, 比如 [JDK](https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html) 在没有开启安全管理(默认)的情况下, 会对 DNS 的解析条目缓存 30 秒. 又比如 [libevent](https://github.com/libevent/libevent) 提供了阻塞和非阻塞两种处理 DNS 请求的方式, 自由度更高.
 
 这些设计方面的差异, 通常会让我们碰到以下几类 DNS 问题:
 
@@ -41,7 +41,7 @@ strace -f  -e trace=connect curl -s -I baidu.com 2>&1 | grep 'htons(53)'
 
 > **备注**: 解释型语言的程序一般在请求的时候大多都会重新访问 `/etc/resolv.conf` 文件.
 
-在文章[Linux 系统如何处理名称解析]({{ site.baseurl }}/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90/)中, 我们提到了 `Centos 7` 在 `glibc-2.17.202` 版本中合并了自动检测 `resolv.conf` 修改的功能:
+在文章[Linux 系统如何处理名称解析](/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90/)中, 我们提到了 `Centos 7` 在 `glibc-2.17.202` 版本中合并了自动检测 `resolv.conf` 修改的功能:
 ```
 # rpm -q --changelog glibc-2.17-260
 ...
@@ -121,7 +121,7 @@ int evdns_base_resolv_conf_parse(struct evdns_base *base, int flags,
 
 第二种方式对技术实力要求较高, 如果想避免 `修改 /etc/{resolv.conf,hosts} 不生效` 的问题, 实际上需要做很多的工作, 如果只是提高解析性能, 可以只考虑支持缓存的功能.
 
-第三种方式则更为通用, 直接使用 glibc 提供的 nscd 组件来提高性能, 应用程序仅保证使用系统函数(`getaddrinfo()`)即可. nscd 相关的配置可以参考文章 [nscd-configure-sample]({{ site.baseurl }}/nscd-configure-sample/). 文章[Linux 系统如何处理名称解析]({{ site.baseurl }}/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90/)中也提到了 nscd 的工作机制. 
+第三种方式则更为通用, 直接使用 glibc 提供的 nscd 组件来提高性能, 应用程序仅保证使用系统函数(`getaddrinfo()`)即可. nscd 相关的配置可以参考文章 [nscd-configure-sample](/nscd-configure-sample/). 文章[Linux 系统如何处理名称解析](/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90/)中也提到了 nscd 的工作机制. 
 
 在实际的生产环境种, 我们建议采用第三种方式, 对应用程序的改动最小, 不需要程序自己实现 dns 缓存以及监听 hosts 文件的变化, 且修改 `/etc/resolv.conf` 也能很快生效. 即便使用了低版本 glibc(没有合并自动检测功能), nscd 也能很好的对修改的 nameserver 进行检测. 另外安全性和稳定性方面也都有保障. 比如以下 nscd 测试:
 
