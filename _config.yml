@@ -16,7 +16,7 @@ timezone:
 
 title: arsterc's blog # the main title
 
-tagline: database, system and performace tuning # it will display as the sub-title
+tagline: database, system and performace tuning
 
 description: >- # used by seo meta and the atom feed
   personal writing
