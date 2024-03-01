@@ -1,7 +1,7 @@
 ---
+layout: post
+date: 2023-01-07
 title: "systemd 方式启动 agent 踩坑记录"
-date: 2024-01-07 12:30:00
-categories: [system]
 tags: [systemd]
 comments: true
 ---

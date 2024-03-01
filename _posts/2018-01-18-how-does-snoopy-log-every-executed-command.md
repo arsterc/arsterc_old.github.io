@@ -1,8 +1,17 @@
 ---
+id: 953
 title: How does snoopy log every executed command
 date: 2018-01-18T17:53:50+08:00
-categories: [system, audit]
-tags: [snoopy]
+author: arstercz
+layout: post
+date: 2018-01-18
+guid: https://highdb.com/?p=953
+permalink: /how-does-snoopy-log-every-executed-command/
+categories:
+  - system
+tags:
+  - snoopy
+comments: true
 ---
 ## snoopy 介绍
 

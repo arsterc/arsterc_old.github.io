@@ -1,8 +1,9 @@
 ---
+layout: post
+date: 2024-02-23
 title: "mysql 客户端访问崩溃排查"
-date: 2024-02-24 14:10:00
-categories: [database]
 tags: [mysql crash]
+comments: true
 ---
 
 ## 错误说明

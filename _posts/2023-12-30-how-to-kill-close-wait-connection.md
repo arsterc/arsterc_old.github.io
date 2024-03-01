@@ -1,8 +1,9 @@
 ---
+layout: post
+date: 2023-12-30
 title: "如何杀掉 close_wait 状态的连接"
-date: 2023-12-30 10:50:00
-categories: [system]
 tags: [close_wait]
+comments: true
 ---
 
 ## CLOSE_WAIT 连接状态说明

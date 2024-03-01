@@ -1,11 +1,12 @@
 ---
-title: "nscd 配置示例说明"
+layout: post
 date: 2021-07-29
-categories: [system, dns]
+title: "nscd 配置示例说明"
 tags: [nscd]
+comments: false
 ---
 
-在文章 [Linux 系统如何处理名称解析]({{ site.baseurl }}/systemd-and-agent-issue/)中我们提到了 `nscd` 作为 glibc 的组件提供了 dns 缓存的功能, 这篇文章则主要介绍 `nscd` 的部署和使用注意事项. 如下列表:
+在文章 [Linux 系统如何处理名称解析]({{ site.baseurl }}/linux-%e7%b3%bb%e7%bb%9f%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%90%8d%e7%a7%b0%e8%a7%a3%e6%9e%90)中我们提到了 `nscd` 作为 glibc 的组件提供了 dns 缓存的功能, 这篇文章则主要介绍 `nscd` 的部署和使用注意事项. 如下列表:
 
 * [测试机器](#测试机器)  
 * [如何安装](#如何安装)

@@ -1,8 +1,9 @@
 ---
-title: "为什么 redis 提示 need enable AOF"
+layout: post
 date: 2021-07-30
-categories: [database, redis]
+title: "为什么 redis 提示 need enable AOF"
 tags: [redis]
+comments: true
 ---
 
 有些程序在连接 Redis 的时候可能出于方便的原因会做一些管理性的操作, 比如 `bgsave, bgrewriteaof, slaveof` 等操作, 这些可能会产生一些意想不到的错误, 比如以下提示信息, 虽然不是致命的错误, 但看起来也很困惑:

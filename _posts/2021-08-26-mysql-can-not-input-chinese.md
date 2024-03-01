@@ -1,8 +1,9 @@
 ---
-title: "MySQL 命令无法输入中文问题处理"
+layout: post
 date: 2021-08-26
-catogories: [database]
+title: "MySQL 命令无法输入中文问题处理"
 tags: [mysql]
+comments: true
 ---
 
 近期通过 mysql 命令连接 mysql server 的时候, 出现了不能输入中文的现象, 如下所示, 在交互模式中输入 `SELECT '<汉字>'` 后, 出现以下情况:

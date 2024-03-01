@@ -1,8 +1,9 @@
 ---
-title: "pika 使用及问题汇总"
+layout: post
 date: 2021-08-17
-categories: [database, nosql]
+title: "pika 使用及问题汇总"
 tags: [redis, pika]
+comments: true
 ---
 
 对于 redis 而言, 数据越多就意味着需要更多的内存, 不管是升级单实例的配置还是扩展其为集群方式, 成本都是我们需要考虑的因素. 实际上, 大多数的业务可能只是数据量大, 访问量反倒不高. 在这种场景下, [pika](https://github.com/OpenAtomFoundation/pika) 可以作为 redis 的一种有效补充. 
@@ -258,6 +259,7 @@ db0 Sets_keys=0, expires=0, invalid_keys=0
 ```
  
 压测期间, 整个 pika 实例的内存及 qps 情况, 整体上比较稳定, 内存使用的变化幅度也不大:
+![pika_set_bench]({{ site.baseurl }}/images/articles/202108/pika_set_bench.png)
  
 ## 更多参考
 

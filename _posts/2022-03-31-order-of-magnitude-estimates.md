@@ -1,8 +1,9 @@
 ---
+layout: post
+date: 2022-03-31
 title: "不同级别的延迟估算"
-date: 2022-03-13 21:50:00
-categories: [system, performance]
 tags: [metric]
+comments: true
 ---
 
 
